@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+
+}
+section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100vh;
+    
+}
+
+@font-face {
+    font-family: NASA;
+    src: url('./Nasa.ttf');
+}
+#col-1{
+    min-height: 50vh;
+    background-color: #088e4f;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,50%);
+
+}
+#col-2{
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+   padding: 0 0 0 20px;
+    background-color: #097040;
+}
+
+.heading{
+    overflow: hidden;
+}
+.sub{
+    overflow: hidden;
+}
+/* Section -1 Imgaes */
+.img-1, .img-1-1,.img-2-1,.img-2{
+    align-self: end;
+    width: 50%;
+    margin-bottom: -10%;
+
+}
+
+.img-2-1{
+align-self: start;
+margin:-30% 0 0;
+justify-self: end;
+}
+.img-3{
+    width: 50%;
+    align-self: center;
+
+}
+.img-3-1{
+width: 50%;
+align-self: start;
+margin-top: -30%;
+
+}
+
+.img-4,.img-4-1,.img-4-2,.img-4-3,.img-4-4{
+position: absolute;
+width: 30%;
+
+}
+.img-4{
+    width: 30%;
+    top: 0;
+    left: 0;
+}
+.img-4-1{
+    width: fit-content;
+    top: -50%;
+    right: 0;
+}
+.img-4-2{
+    bottom: 0;
+    left: 5%;
+}
+
+.img-4-3{
+    bottom: 0;
+    right: 0;
+}
+.img-4-4{
+    width: 30%;
+    top: 20%;
+    right: 15%;
+}
+
+.img-5,.img-5-1,.img-5-2,.img-5-3,.img-5-4{
+    position: absolute;
+    width: 30%;
+}
+.img-5{
+    top: -17%;
+    left: 50px;
+}
+.img-5-1{
+    top: -10%;
+    left: 45%;
+}
+.img-5-2{
+    bottom: -15%;
+    left: 50px;
+
+}
+.img-5-3{
+    bottom: -20%;
+    left: 45%;
+
+}
+
+.img-5-4{
+    width: 20%;
+    top:30%;
+    right: 0%;
+}
+.img-6{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;left: 0;
+
+}
+
+.img-6-1{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+}
+.img-7{
+    width: 50%;
+    align-self: flex-end;
+    margin-left: 50px;
+    margin-bottom: -10%;
+
+}
+.img-7-1{
+    width: 50%;
+    margin-left: -50px;
+
+    align-self: flex-end;
+margin-bottom: -10%;
+}
+
+/* scroll text secton-2 */
+
+.scroll{
+    display: none;
+}
+
+/* section -2 title img */
+
+.main-img{
+    width: 70%;
+    margin-top: -10px;
+    position: relative;
+    z-index: 2;
+    background-color: #5c0bc0;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+/* section-2 text */
+#main-text{
+    padding-inline: 10px;
+    margin-bottom: 10px;
+}
+#main-text h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+}
+#main-text p{
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 30px;
+    margin-bottom: 50px;
+    overflow: hidden;
+
+}
+/* section button */
+#main-text button{
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+
+
+
+@media screen and (min-width:500px) {
+    .img-1,.img-1-1{
+        width: 50%;
+    }
+     .main-img{
+        width: 50%;
+     }
+}
+
+
+@media screen and (min-width:768px) {
+    section{
+        flex-direction: row-reverse;
+    }
+    #col-1,#col-2{
+        min-height: 100vh;
+        width: 50%;
+    }
+    .img-2,.img-2-1{
+        width: 50%;
+    }
+    .img-1,.img-1-1{
+        width: 50%;
+        margin: 0;
+    }
+    #col-1{
+        padding-left: 50px;
+    }
+    .img-4-1{
+        top: -20%;
+    }
+    .img-7{
+        margin-left: 0;
+    }
+    .main-img{
+        width: 50%;
+    }
+    #main-text{
+         margin-block: auto 50px;
+    }
+    .img-1,.img-1-1{
+        align-self: center;
+    }
+    .scroll{
+        display: block;
+       position: relative;
+        min-height: 50vh;
+    }
+    
+    .scroll svg{
+        width: 50%;
+        position: absolute;
+        margin-right: -10%;
+        left: 60%;
+        top: 20%;
+        border-radius: 50%;
+    }
+    .scroll #scroll-text{
+        position: absolute;
+        top: 40%;
+        left: 70%;
+        transform: translateX(-50%);
+        width: fit-content;
+        font-size: 20px;
+    }
+    #scroll-text h3{
+        font-size: 30px;
+        text-align: center;
+        text-wrap: nowrap;
+
+
+    }
+    #scroll-text p{
+        font-size: 16px;
+        text-wrap: nowrap;
+
+
+    }
+    #scroll-text p:nth-of-type(2){
+        text-align: right;
+    }
+    .logo-main{
+        width: 180px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .scroll #scroll-text{
+        top: 48%;
+        
+    }
+    .img-7{
+        margin-left: 50px;
+    }
+    #scroll-text h3{
+        font-size: 40px;
+    }
+    #scroll-text p{
+        font-size: 20px;
+    }
+    .logo-main{
+        width: 220px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+  .main-img{
+   width: 100%;
+  }
+  #main-text{
+    width: 50%;
+    margin-block:auto 20px;
+  }
+  .logo-main{
+    width: 300px;
+  }
+  #main-text p{
+    padding-right: 60px;
+
+    line-height: 30px;
+  }
+  .scroll #scroll-text{
+    top: 50%;
+    left: 70%;
+    transform: translateX(-50%);
+  }
+  #scroll-text h3{
+    font-size: 60px;
+}
+#scroll-text p{
+    font-size: 30px;
+}
+}
