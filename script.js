@@ -151,20 +151,31 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   mainImg.style.backgroundColor=`${DataArray[index].col2} `
 
   mainImg.setAttribute("src", DataArray[index].mainImage);
+  maintext.appendChild(mainImg);
 
   const h2 = document.createElement("h2");
   h2.setAttribute("class", "heading");
+
   h2.innerText = DataArray[index].mainText;
+  maintext.appendChild(h2);
+
   const p = document.createElement("p");
   p.setAttribute("class", "sub");
   p.innerText = DataArray[index].mainsub;
-  const Buttn = document.createElement("button");
-  Buttn.setAttribute("class", "btn");
-  Buttn.innerText = DataArray[index].buttontext;
-  maintext.appendChild(mainImg);
-  maintext.appendChild(h2);
   maintext.appendChild(p);
-  maintext.appendChild(Buttn);
+
+  if(DataArray[index].buttontext==='View Case Study'){
+    const Buttn = document.createElement("button");
+    Buttn.setAttribute("class", "btn");
+    Buttn.innerHTML = `${DataArray[index].buttontext} <i class="fa-solid fa-arrow-right"></i>`;
+    maintext.appendChild(Buttn);
+  }
+  else{
+    const Buttn = document.createElement("button");
+    Buttn.setAttribute("class", "btn");
+    Buttn.innerText = `${DataArray[index].buttontext} `;
+    maintext.appendChild(Buttn);
+  }
   ring.style.strokeDasharray=`10,1000`
 
   Col1.style.backgroundColor=DataArray[index].col1
@@ -215,12 +226,15 @@ if (window.matchMedia("(min-width: 768px)").matches) {
         scrollText.appendChild(Pfirst);
 
         if (DataArray[index].heading === "NASA") {
+          const div=document.createElement('div');
+          div.style.overflow='hidden';
           const h3 = document.createElement("img");
           h3.setAttribute("class", "logo-main");
           h3.setAttribute("src", "images/nasa-mobile-app.png");
 
           h3.innerText = DataArray[index].heading;
-          scrollText.appendChild(h3);
+          div.appendChild(h3);
+          scrollText.appendChild(div)
         } else {
           const h3 = document.createElement("h3");
           h3.setAttribute("class", "heading");
@@ -241,20 +255,30 @@ if (window.matchMedia("(min-width: 768px)").matches) {
         mainImg.style.backgroundColor=`${DataArray[index].col2} `
 
         mainImg.setAttribute("src", DataArray[index].mainImage);
+        maintext.appendChild(mainImg);
 
         const h2 = document.createElement("h2");
         h2.setAttribute("class", "heading");
         h2.innerText = DataArray[index].mainText;
+        maintext.appendChild(h2);
+
         const p = document.createElement("p");
         p.setAttribute("class", "sub");
         p.innerText = DataArray[index].mainsub;
-        const Buttn = document.createElement("button");
-        Buttn.setAttribute("class", "btn");
-        Buttn.innerText = DataArray[index].buttontext;
-        maintext.appendChild(mainImg);
-        maintext.appendChild(h2);
         maintext.appendChild(p);
-        maintext.appendChild(Buttn);
+
+        if(DataArray[index].buttontext==='View Case Study'){
+          const Buttn = document.createElement("button");
+          Buttn.setAttribute("class", "btn");
+          Buttn.innerHTML = `${DataArray[index].buttontext} <i class="fa-solid fa-arrow-right"></i>`;
+          maintext.appendChild(Buttn);
+        }
+        else{
+          const Buttn = document.createElement("button");
+          Buttn.setAttribute("class", "btn");
+          Buttn.innerText = `${DataArray[index].buttontext} `;
+          maintext.appendChild(Buttn);
+        }
     
         const MyText = new SplitType(".heading");
 const subtext = new SplitType(".sub");
@@ -305,12 +329,15 @@ Col2.style.backgroundColor=DataArray[index].col2
       scrollText.appendChild(Pfirst);
 
       if (DataArray[index].heading === "NASA") {
+        const div=document.createElement('div');
+        div.style.overflow='hidden';
         const h3 = document.createElement("img");
         h3.setAttribute("class", "logo-main");
         h3.setAttribute("src", "images/nasa-mobile-app.png");
 
         h3.innerText = DataArray[index].heading;
-        scrollText.appendChild(h3);
+        div.appendChild(h3);
+        scrollText.appendChild(div)
       } else {
         const h3 = document.createElement("h3");
         h3.setAttribute("class", "heading");
@@ -331,20 +358,31 @@ Col2.style.backgroundColor=DataArray[index].col2
       mainImg.style.backgroundColor=`${DataArray[index].col2} `
 
       mainImg.setAttribute("src", DataArray[index].mainImage);
+      maintext.appendChild(mainImg);
 
       const h2 = document.createElement("h2");
       h2.setAttribute("class", "heading");
       h2.innerText = DataArray[index].mainText;
+      maintext.appendChild(h2);
+
       const p = document.createElement("p");
       p.setAttribute("class", "sub");
       p.innerText = DataArray[index].mainsub;
-      const Buttn = document.createElement("button");
-      Buttn.setAttribute("class", "btn");
-      Buttn.innerText = DataArray[index].buttontext;
-      maintext.appendChild(mainImg);
-      maintext.appendChild(h2);
       maintext.appendChild(p);
-      maintext.appendChild(Buttn);
+
+      if(DataArray[index].buttontext==='View Case Study'){
+        const Buttn = document.createElement("button");
+        Buttn.setAttribute("class", "btn");
+        Buttn.innerHTML = `${DataArray[index].buttontext} <i class="fa-solid fa-arrow-right"></i>`;
+        maintext.appendChild(Buttn);
+      }
+      else{
+        const Buttn = document.createElement("button");
+        Buttn.setAttribute("class", "btn");
+        Buttn.innerText = `${DataArray[index].buttontext} `;
+        maintext.appendChild(Buttn);
+      }
+   
       const MyText = new SplitType(".heading");
 const subtext = new SplitType(".sub");
 if(index>=0){
@@ -363,9 +401,7 @@ DataArray.map((item)=>{
 
 function Down() {
   gsap.from(".char ", {
-    scrollTrigger: {
-      trigger: ".char",
-    },
+   
     yPercent: -100,
 
     duration: 2,
@@ -375,29 +411,93 @@ function Down() {
     autoAlpha: 0,
     duration: 2,
   });
-  gsap.from(".", {
+  
+  gsap.from(".btn", {
+    scale: 0,
+    duration: 2,
+  });
+
+  gsap.from(".img-2", {
     yPercent: 100,
     duration: 2,
-    stagger: 0.5,
   });
-  gsap.from(".img-2", {
+
+  gsap.from(".img-2-1", {
     yPercent: -100,
     duration: 2,
-    yoyo: true,
   });
-  gsap.from(".img-2-1", {
+  gsap.from(".img-3", {
     yPercent: 100,
     duration: 2,
-    yoyo: true,
   });
+  gsap.from(".img-3-1", {
+    yPercent: -100,
+    duration: 2,
+  });
+  gsap.from(".img-4", {
+    xPercent: -100,
+    duration: 2,
+  });
+  gsap.from(".img-4-1", {
+    xPercent: 100,
+    duration: 2,
+  });
+  gsap.from(".img-4-3", {
+    xPercent: 100,
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-4-2", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-4-4", {
+    y:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5", {
+    yPercent:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5-1", {
+    yPercent:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5-2", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-5-3", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-5-4", {
+    xPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-6-1", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-7", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-7-1", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from('.logo-main',{
+    y:-100,
+    duration: 2,
+
+  })
 }
 
 function up() {
   gsap.from(".char ", {
-    scrollTrigger: {
-      trigger: ".char",
-    },
-    yPercent: 100,
+  
+    yPercent: -100,
 
     duration: 2,
   });
@@ -406,14 +506,107 @@ function up() {
     autoAlpha: 0,
     duration: 2,
   });
-  gsap.from(".", {
-    yPercent: 100,
-    duration: 2,
-    stagger: 0.5,
-  });
+  
   gsap.from(".btn", {
     scale: 0,
     duration: 2,
-    yoyo: true,
   });
+  gsap.from('.img-1',{
+    yPercent:100,
+    duration: 2,
+
+  })
+  gsap.from('.img-1-1',{
+    yPercent:100,
+    duration: 2,
+
+  })
+  gsap.from(".img-2", {
+    yPercent: 100,
+    duration: 2,
+  });
+  gsap.from(".img-2-1", {
+    yPercent: -100,
+    duration: 2,
+  });
+  gsap.from(".img-3", {
+    yPercent: 100,
+    duration: 2,
+  });
+  gsap.from(".img-3-1", {
+    yPercent: -100,
+    duration: 2,
+  });
+  gsap.from(".img-4", {
+    xPercent: -100,
+    duration: 2,
+  });
+  gsap.from(".img-4-1", {
+    xPercent: 100,
+    duration: 2,
+  });
+  gsap.from(".img-4-3", {
+    xPercent: 100,
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-4-2", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-4-4", {
+    y:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5", {
+    yPercent:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5-1", {
+    yPercent:-100,
+    duration: 2,
+  });
+  gsap.from(".img-5-2", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-5-3", {
+    yPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-5-4", {
+    xPercent:100,
+    duration: 2,
+  });
+  gsap.from(".img-6-1", {
+    yPercent:100,
+    duration: 2,
+  });
+
+  gsap.from('.logo-main',{
+    y:-100,
+    duration: 2,
+
+  })
 }
+$('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  responsiveClass:true,
+  responsive:{
+      0:{
+          items:1,
+          nav:false,
+          loop:false      },
+      600:{
+          items:1,
+          nav:false,
+          loop:false
+      },
+      1000:{
+          items:5,
+          nav:false,
+          loop:false
+      }
+  }
+})
