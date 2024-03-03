@@ -17,7 +17,7 @@
     src: url('./Nasa.ttf');
 }
 #col-1,.col-img{
-    min-height: 50vh;
+    height: 50vh;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -252,6 +252,12 @@ margin-bottom: -10% !important;
     font-size: 22px;
 }
 
+#main-text button{
+    position: absolute;
+    bottom: 7%;
+
+}
+
 .skip{
     display: none;
     position: absolute;
@@ -419,7 +425,7 @@ margin-bottom: -10% !important;
   }
   #main-text{
     width: 50%;
-    margin-block:auto 20px;
+    margin-block:auto 0px;
   }
   .logo-main{
     width: 300px;
@@ -441,6 +447,6 @@ margin-bottom: -10% !important;
     font-size: 30px;
 }
 .skip{
-    bottom: 3%;
+    bottom: 7%;
 }
 }
